@@ -2,11 +2,14 @@ import java.util.Random;
 public class Board
 {
 	Random rand = new Random();
-	int [][] space = new int[9][9];
+	public int [][] space = new int[9][9];
 	final static int LINE_LENGTH = 9;
-	
-	
+
 	public Board()
+	{
+
+	}
+	public Board(int x)
 	{
 		for (int i = 0;i<9;i++)
 		{
@@ -21,12 +24,12 @@ public class Board
 			}
 		}
 	}
-	
-	public void fillSquare(int row,int col)
+
+	public void setSquare(int row,int col)
 	{
 		this.space[row][col]=rand.nextInt(LINE_LENGTH)+1;
 	}
-	
+
 	public boolean checkRow(int row,int col)
 	{
 		boolean duplicate= false;
@@ -61,4 +64,52 @@ public class Board
 		}
 		return duplicate;
 	}
+	/*public void generate()
+	{
+		final int TOO_MANY_TRY =10;
+		int numOfTry =0;
+
+		for(int i=0;i<LINE_LENGTH;i++)
+		{
+			for (int j=0;j<LINE_LENGTH;j++)
+			{	
+				this.setSquare(i, j);
+				boolean rowCheck = checkRow(i, j);
+				boolean colCheck = checkCol(i, j);
+				while(rowCheck||colCheck)
+				{
+					this.setSquare(i, j);
+					numOfTry= numOfTry+1;
+					if(numOfTry>=TOO_MANY_TRY)
+					{
+						colCheck=false;
+						rowCheck=false;
+						i=i+LINE_LENGTH;
+						j=j+LINE_LENGTH;
+
+					}
+				}
+			}
+		}
+		if(numOfTry>=TOO_MANY_TRY)
+		{
+			this.generate();
+		}
+	}
+	 */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
