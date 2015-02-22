@@ -64,6 +64,263 @@ public class Board
 		}
 		return duplicate;
 	}
+	public boolean checkBox(int row,int col)
+	{
+		String box="number";
+		boolean duplicate= false;
+		if(row<3&&col<3)
+			box="first";
+		if(row<3&&col<6&&col>2)
+			box="second";
+		if(row<3&&col<9&&col>5)
+			box="third";
+		if(row<6&&row>2&&col<3)
+			box="fourth";
+		if(row<6&&row>2&&col<6&&col>2)
+			box="fifth";
+		if(row<6&&row>2&&col<9&&col>5)
+			box="sixth";
+		if(row<9&&row>5&&col<3)
+			box="seventh";
+		if(row<9&&row>5&&col<6&&col>2)
+			box="eigth";
+		if(row<9&&row>5&&col<9&&col>5)
+			box="ninth";
+		switch(box)
+		{
+		case "first":
+		{
+			for(int l=0;l<3;l+=3)
+			{
+				for(int k=0;k<3;k+=3)
+				{
+					for (int i=l;i<3+l;i++)
+					{
+						for(int j=k;j<3+k;j++)
+						{
+							if (row==i&&col==j)
+							{
+
+							}
+							else
+								if(this.space[row][col]==this.space[i][j])
+								{
+									duplicate = true;
+								}
+						}
+					}
+				}
+			}
+		}
+		break;
+		case "second":
+		{
+			for(int l=0;l<3;l+=3)
+			{
+				for(int k=3;k<6;k+=3)
+				{
+					for (int i=l;i<3+l;i++)
+					{
+						for(int j=k;j<3+k;j++)
+						{
+							if (row==i&&col==j)
+							{
+
+							}
+							else
+								if(this.space[row][col]==this.space[i][j])
+								{
+									duplicate = true;
+								}
+						}
+					}
+				}
+			}
+		}
+		break;
+		case "third":
+		{
+			for(int l=0;l<3;l+=3)
+			{
+				for(int k=6;k<9;k+=3)
+				{
+					for (int i=l;i<3+l;i++)
+					{
+						for(int j=k;j<3+k;j++)
+						{
+							if (row==i&&col==j)
+							{
+
+							}
+							else
+								if(this.space[row][col]==this.space[i][j])
+								{
+									duplicate = true;
+								}
+						}
+					}
+				}
+			}
+		}
+		break;
+		case "fourth":
+		{
+			for(int l=3;l<6;l+=3)
+			{
+				for(int k=0;k<3;k+=3)
+				{
+					for (int i=l;i<3+l;i++)
+					{
+						for(int j=k;j<3+k;j++)
+						{
+							if (row==i&&col==j)
+							{
+
+							}
+							else
+								if(this.space[row][col]==this.space[i][j])
+								{
+									duplicate = true;
+								}
+						}
+					}
+				}
+			}
+		}
+		break;
+		case "fifth":
+		{
+			for(int l=3;l<6;l+=3)
+			{
+				for(int k=3;k<6;k+=3)
+				{
+					for (int i=l;i<3+l;i++)
+					{
+						for(int j=k;j<3+k;j++)
+						{
+							if (row==i&&col==j)
+							{
+
+							}
+							else
+								if(this.space[row][col]==this.space[i][j])
+								{
+									duplicate = true;
+								}
+						}
+					}
+				}
+			}
+		}
+		break;
+		case "sixth":
+		{
+			for(int l=3;l<6;l+=3)
+			{
+				for(int k=6;k<9;k+=3)
+				{
+					for (int i=l;i<3+l;i++)
+					{
+						for(int j=k;j<3+k;j++)
+						{
+							if (row==i&&col==j)
+							{
+
+							}
+							else
+								if(this.space[row][col]==this.space[i][j])
+								{
+									duplicate = true;
+								}
+						}
+					}
+				}
+			}
+		}
+		break;
+		case "seventh":
+		{
+			for(int l=6;l<9;l+=3)
+			{
+				for(int k=0;k<3;k+=3)
+				{
+					for (int i=l;i<3+l;i++)
+					{
+						for(int j=k;j<3+k;j++)
+						{
+							if (row==i&&col==j)
+							{
+
+							}
+							else
+								if(this.space[row][col]==this.space[i][j])
+								{
+									duplicate = true;
+								}
+						}
+					}
+				}
+			}
+		}
+		break;
+		case "eigth":
+		{
+			for(int l=6;l<9;l+=3)
+			{
+				for(int k=3;k<6;k+=3)
+				{
+					for (int i=l;i<3+l;i++)
+					{
+						for(int j=k;j<3+k;j++)
+						{
+							if (row==i&&col==j)
+							{
+
+							}
+							else
+								if(this.space[row][col]==this.space[i][j])
+								{
+									duplicate = true;
+								}
+						}
+					}
+				}
+			}
+		}
+		break;
+		case "ninth":
+		{
+			for(int l=6;l<9;l+=3)
+			{
+				for(int k=6;k<9;k+=3)
+				{
+					for (int i=l;i<3+l;i++)
+					{
+						for(int j=k;j<3+k;j++)
+						{
+							if (row==i&&col==j)
+							{
+
+							}
+							else
+								if(this.space[row][col]==this.space[i][j])
+								{
+									duplicate = true;
+								}
+						}
+					}
+				}
+			}
+		}
+		break;
+		default :
+		{
+			System.out.println("Problem with box algorithm");
+			System.exit(0);
+		}
+		}
+		return duplicate;
+	}
 	/*public void generate()
 	{
 		final int TOO_MANY_TRY =10;
